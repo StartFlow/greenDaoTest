@@ -52,6 +52,7 @@
 
     <ConstraintSet android:id="@+id/end">
         <Constraint android:id="@+id/text"
+            android:rotation="45"
             android:layout_width="64dp"
             android:layout_height="64dp"
             app:layout_constraintRight_toRightOf="parent"
@@ -88,36 +89,23 @@
         app:constraintSetEnd="@id/end"
         app:constraintSetStart="@id/start"
         app:duration="1000"
-        app:motionInterpolator="linear">
+        app:motionInterpolator="easeInOut">
         <OnClick
             app:targetId="@id/text"
             app:clickAction="toggle"/>
 
         <KeyFrameSet >
-            <KeyPosition
-                app:motionTarget="@id/text1"
-                app:framePosition="60"
-                app:keyPositionType="parentRelative"
-                app:percentX="1"
-                app:percentY="0.5"/>
-            <KeyPosition
-                app:motionTarget="@id/text2"
-                app:framePosition="70"
-                app:keyPositionType="parentRelative"
-                app:percentY="1"/>
-            <KeyPosition
-                app:motionTarget="@id/text3"
-                app:framePosition="80"
-                app:keyPositionType="deltaRelative"
-                app:percentX="1"/>
-            <KeyPosition
-                app:motionTarget="@id/text4"
-                app:framePosition="90"
-                app:keyPositionType="deltaRelative"
-                app:percentY="1"/>
+           <KeyAttribute app:motionTarget="@id/text"
+               app:framePosition="50"
+               android:scaleX="1.2"
+               android:scaleY="1.2"
+               />
         </KeyFrameSet>
 
     </Transition>
+
+
+    
 
 
 </MotionScene>

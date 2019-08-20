@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.fragment)
     TextView showFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,5 +41,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this,MotionActivity.class));
     }
 
-
+    @OnClick(R.id.jetpack)
+    public void in2JetpackActivity(){
+        startActivity(new Intent(this,JetpackActivity.class));
+    }
 }
