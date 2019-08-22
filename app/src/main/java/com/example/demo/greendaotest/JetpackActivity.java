@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.demo.greendaotest.model.PicViewModel;
@@ -22,6 +25,9 @@ public class JetpackActivity extends AppCompatActivity {
     @BindView(R.id.bg_pic)
     ImageView bgImagview;
 
+    @BindView(R.id.pro_show)
+    ProgressBar bar;
+
     private PicViewModel picViewModel;
 
 
@@ -34,18 +40,28 @@ public class JetpackActivity extends AppCompatActivity {
         picViewModel = ViewModelProviders.of(this, InjectorUtil.getPicViewModelFatory()).get(PicViewModel.class);
         if (TextUtils.isEmpty(picViewModel.picUrl)){
             obServebgPic(picViewModel.getPicUrl());
+            bar.setVisibility(View.VISIBLE);
         }else {
             loadBgImageView(picViewModel.picUrl);
         }
     }
     private void obServebgPic(LiveData<String> liveData) {
+        //需要观察为同一对象
         liveData.observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
+                bar.setVisibility(View.GONE);
                 if (picViewModel.picUrl == null) {
                     picViewModel.picUrl = s;
+                }else {
+                    if (picViewModel.picUrl.equals(s)){
+                        Toast.makeText(JetpackActivity.this, "已经是最新图片啦~", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                 }
                 loadBgImageView(s);
+
+
             }
         });
     }
@@ -56,7 +72,9 @@ public class JetpackActivity extends AppCompatActivity {
 
     @OnClick(R.id.refresh)
     public void getPic() {
-        picViewModel.getPicUrl();
+        obServebgPic(picViewModel.getPicUrl());
+        bar.setVisibility(View.VISIBLE);
     }
+
 
 }

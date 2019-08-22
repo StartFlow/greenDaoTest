@@ -21,4 +21,5 @@ public class PicViewModel extends ViewModel {
     public String getCacheUrl(){
         return picViewRepository.getCacheUrl();
     }
+
 }

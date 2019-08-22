@@ -21,6 +21,8 @@
         <activity android:name=".GreenDaoActivity"/>
         <activity android:name=".MotionActivity"/>
         <activity android:name=".JetpackActivity"/>
+        <activity android:name=".PagingActivity"/>
+        <activity android:name=".LifecycleActivity"/>
     </application>
 
 </manifest>

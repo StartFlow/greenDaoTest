@@ -45,4 +45,14 @@ public class MainActivity extends AppCompatActivity {
     public void in2JetpackActivity(){
         startActivity(new Intent(this,JetpackActivity.class));
     }
+
+    @OnClick(R.id.paging)
+    public void in2PagingActivity(){
+        startActivity(new Intent(this,PagingActivity.class));
+    }
+
+    @OnClick(R.id.lifecycle)
+    public void  in2LifeCycleActivity(){
+        startActivity(new Intent(this,LifecycleActivity.class));
+    }
 }
