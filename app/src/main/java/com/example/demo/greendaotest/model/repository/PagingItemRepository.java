@@ -15,6 +15,7 @@ public class PagingItemRepository {
     public LiveData<PagedList<String>> getItemList(){
         final PageDataSource source = new PageDataSource();
         PageDataFatory fatory =new PageDataFatory(source);
+        //分页配置
         PagedList.Config config = new PagedList.Config.Builder().setPageSize(10)
                 .setPrefetchDistance(10)
                 .setEnablePlaceholders(false)

@@ -21,6 +21,10 @@ import com.example.demo.greendaotest.workmanage.MyWork;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 继承自AppCompatActivity默认实现了LifeCycleOwner接口
+ * 继承自Activity需要自己实现LifeCycleOwner接口
+ */
 public class LifecycleActivity extends AppCompatActivity {
 
 
@@ -29,7 +33,6 @@ public class LifecycleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //继承自AppCompatActivity默认实现了LifeCycleOwner接口
         setContentView(R.layout.activity_lifecycle_layout);
         ButterKnife.bind(this);
         getLifecycle().addObserver(new MyObserve());
@@ -49,6 +52,7 @@ public class LifecycleActivity extends AppCompatActivity {
         @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
         private void getImageUrl(){
             WorkManager.getInstance().enqueue(request);
+            //通过livedata观察数据变化
             WorkManager.getInstance().getWorkInfoByIdLiveData(request.getId()).observe(LifecycleActivity.this, new Observer<WorkInfo>() {
                 @Override
                 public void onChanged(@Nullable WorkInfo workInfo) {

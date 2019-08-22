@@ -24,6 +24,7 @@ public class MyWork  extends Worker {
     @NonNull
     @Override
     public Result doWork() {
+        //使用Android原生HTTP获取每日一图接口返回
         String results = "";
         BufferedReader reader = null;
         HttpURLConnection connection = null;

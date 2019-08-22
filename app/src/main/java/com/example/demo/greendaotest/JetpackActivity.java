@@ -30,7 +30,11 @@ public class JetpackActivity extends AppCompatActivity {
 
     private PicViewModel picViewModel;
 
-
+    /**
+     * 使用MVVM构造模式，分层级引用  UI 控制器引用 ViewModel，ViewModel 引用数据源仓库 ，仓库持有网络层或者本地化数据获取的引用
+     *
+     * 依赖ViewModel LiveData 实现， 暂时没有使用 DataBinding
+     * */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
