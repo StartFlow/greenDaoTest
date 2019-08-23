@@ -3,6 +3,7 @@ apply plugin: 'org.greenrobot.greendao'
 
 
 android {
+
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.demo.greendaotest"
@@ -21,6 +22,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    dataBinding{
+        enabled true
     }
     buildToolsVersion '28.0.1'
 }
