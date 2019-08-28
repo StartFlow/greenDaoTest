@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidPractice</string>
+    <string name="button_add">Add</string>
+    <string name="input_hint">在这里输入笔记</string>
 </resources>

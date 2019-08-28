@@ -60,4 +60,15 @@ public class MainActivity extends AppCompatActivity {
     public void in2DataBindingActivity(){
         startActivity(new Intent(this,DatabindingActivity.class));
     }
+
+    @OnClick(R.id.rxjava)
+    public void in2RxJavaActivity(){
+
+        startActivity(new Intent(this,RxJavaActivity.class));
+    }
+
+    @OnClick(R.id.objectbox)
+    public void in2ObjectBoxActivity(){
+        startActivity(new Intent(this,ObjectBoxActivity.class));
+    }
 }

@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.demo.practice.entity.DaoMaster;
 import com.example.demo.practice.entity.DaoSession;
+import com.example.demo.practice.objectbox.ObjectBox;
 
 public class MyApplication extends Application {
 
@@ -14,12 +15,14 @@ public class MyApplication extends Application {
     private DaoSession daoSession;
     public static MyApplication application;
 
+
     final String dbName = "qq.db";
     @Override
     public void onCreate() {
         super.onCreate();
         application = this;
         setDatabase();
+        ObjectBox.init(this);
     }
 
     public SQLiteDatabase getDb() {

@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.android.application'
+apply plugin: 'io.objectbox'
 
 
 android {
@@ -26,7 +28,7 @@ android {
     dataBinding{
         enabled true
     }
-    buildToolsVersion '28.0.1'
+    buildToolsVersion '28.0.3'
 }
 
 dependencies {
@@ -50,4 +52,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
     implementation 'android.arch.paging:runtime:1.0.1'
     implementation "android.arch.work:work-runtime:1.0.1"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.12'
+//    debugImplementation "io.objectbox:objectbox-android-objectbrowser:$objectboxVersion"
+//    releaseImplementation "io.objectbox:objectbox-android:$objectboxVersion"
 }

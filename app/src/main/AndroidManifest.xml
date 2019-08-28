@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.demo.practice">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:name="com.example.demo.practice.application.MyApplication"
@@ -24,6 +25,8 @@
         <activity android:name="com.example.demo.practice.PagingActivity"/>
         <activity android:name="com.example.demo.practice.LifecycleActivity"/>
         <activity android:name="com.example.demo.practice.DatabindingActivity"/>
+        <activity android:name=".RxJavaActivity"/>
+        <activity android:name=".ObjectBoxActivity"/>
     </application>
 
 </manifest>

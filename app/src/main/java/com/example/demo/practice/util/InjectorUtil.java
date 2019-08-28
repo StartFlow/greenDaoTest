@@ -3,12 +3,22 @@ package com.example.demo.practice.util;
 import com.example.demo.practice.model.DataBindingViewModelFatory;
 import com.example.demo.practice.model.PagingItemViewModelFatory;
 import com.example.demo.practice.model.PicViewModelFatory;
+import com.example.demo.practice.model.RxJavaViewModelFatory;
 
 public class InjectorUtil {
 
     private static PicViewModelFatory picViewFatory;
     private static PagingItemViewModelFatory pagingItemFatory;
     private static DataBindingViewModelFatory dataBindingViewModelFatory;
+
+    public static RxJavaViewModelFatory getRxJavaViewModelFatory() {
+        if (rxJavaViewModelFatory==null){
+            rxJavaViewModelFatory = new RxJavaViewModelFatory();
+        }
+        return rxJavaViewModelFatory;
+    }
+
+    private static RxJavaViewModelFatory rxJavaViewModelFatory;
 
     public static PicViewModelFatory getPicViewModelFatory(){
         if (picViewFatory==null){
@@ -32,5 +42,7 @@ public class InjectorUtil {
 
         return dataBindingViewModelFatory;
     }
+
+
 
 }
