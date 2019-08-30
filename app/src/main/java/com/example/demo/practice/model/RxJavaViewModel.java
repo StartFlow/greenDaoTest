@@ -22,4 +22,5 @@ public class RxJavaViewModel extends ViewModel {
     public void getImageUrl(){
         repository.getImageUrl(liveData);
     }
+
 }

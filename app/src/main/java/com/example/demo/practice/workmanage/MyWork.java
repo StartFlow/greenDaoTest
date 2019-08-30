@@ -15,6 +15,11 @@ import java.net.URL;
 
 public class MyWork  extends Worker {
     final String BASE_URL = "http://guolin.tech/api/bing_pic";
+    final String inTheater = "in_theaters";
+    final String apiKey ="0b2bdeda43b5688921839c8ecb20399b";
+    final String city = "广州";
+
+    private final String Url = String.format("https://api.douban.com/v2/movie/%s?apikey=%s&city=%s&start=0&count=1",inTheater,apiKey,city);
 
 
     public MyWork(@NonNull Context context, @NonNull WorkerParameters workerParams) {
@@ -29,7 +34,7 @@ public class MyWork  extends Worker {
         BufferedReader reader = null;
         HttpURLConnection connection = null;
         try {
-            URL uri = new URL(BASE_URL);
+            URL uri = new URL(Url);
             connection = (HttpURLConnection) uri.openConnection();
             connection.setConnectTimeout(2000);
             connection.setReadTimeout(2000);
@@ -57,7 +62,7 @@ public class MyWork  extends Worker {
                 connection.disconnect();
             }
         }
-        Data data = new Data.Builder().putString("imageurl",results).build();
+        Data data = new Data.Builder().putString("jsonStr",results).build();
         return Result.success(data);
     }
 }

@@ -7,7 +7,7 @@ import android.arch.lifecycle.OnLifecycleEvent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
+import android.text.TextUtils;
 
 import androidx.work.Constraints;
 import androidx.work.Data;
@@ -16,11 +16,8 @@ import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkInfo;
 import androidx.work.WorkManager;
 
-import com.bumptech.glide.Glide;
+import com.example.demo.practice.fragment.MovieItemFragment;
 import com.example.demo.practice.workmanage.MyWork;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * 继承自AppCompatActivity默认实现了LifeCycleOwner接口
@@ -28,14 +25,11 @@ import butterknife.ButterKnife;
  */
 public class LifecycleActivity extends AppCompatActivity {
 
-
-    @BindView(R.id.load_image)
-    ImageView loadImage;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lifecycle_layout);
-        ButterKnife.bind(this);
+       // ButterKnife.bind(this);
         getLifecycle().addObserver(new MyObserve());
         getSupportActionBar().hide();
 
@@ -60,12 +54,23 @@ public class LifecycleActivity extends AppCompatActivity {
                 public void onChanged(@Nullable WorkInfo workInfo) {
                     if (workInfo!=null){
                         Data data = workInfo.getOutputData();
-                        String url = data.getString("imageurl");
-                        Glide.with(LifecycleActivity.this).load(url).into(loadImage);
+                        String jsonStr = data.getString("jsonStr");
+                        if (!TextUtils.isEmpty(jsonStr)){
+                            MovieItemFragment fragment = MovieItemFragment.getInstance(jsonStr);
+                            fragment.show(getSupportFragmentManager(),"");
+                        }
+
                     }
                 }
             });
         }
 
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        WorkManager.getInstance().cancelAllWork();
+        super.onDestroy();
     }
 }
