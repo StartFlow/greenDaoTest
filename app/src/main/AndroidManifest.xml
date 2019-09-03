@@ -27,6 +27,8 @@
         <activity android:name="com.example.demo.practice.DatabindingActivity"/>
         <activity android:name=".RxJavaActivity"/>
         <activity android:name=".ObjectBoxActivity"/>
+        <activity android:name=".DiffUtilActivity"/>
+        <activity android:name=".CustomViewActivity"/>
     </application>
 
 </manifest>

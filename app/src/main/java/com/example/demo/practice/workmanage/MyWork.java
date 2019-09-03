@@ -19,7 +19,7 @@ public class MyWork  extends Worker {
     final String apiKey ="0b2bdeda43b5688921839c8ecb20399b";
     final String city = "广州";
 
-    private final String Url = String.format("https://api.douban.com/v2/movie/%s?apikey=%s&city=%s&start=0&count=1",inTheater,apiKey,city);
+    private final String Url = String.format("https://api.douban.com/v2/movie/%s?apikey=%s&city=%s&start=1&count=1",inTheater,apiKey,city);
 
 
     public MyWork(@NonNull Context context, @NonNull WorkerParameters workerParams) {

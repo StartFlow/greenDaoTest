@@ -51,7 +51,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/durations"
+            android:layout_below="@id/durations"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/genres"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/genres"
             android:textSize="16sp"
             android:id="@+id/daoyan"
             android:text="导演: "/>
@@ -76,6 +83,20 @@
             android:textSize="16sp"
             android:id="@+id/casts"
             android:layout_alignBaseline="@id/zhuyan"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/zhuyan"
+            android:text="上映日期: "
+            android:textSize="16sp"
+            android:id="@+id/pub"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/pub"
+            android:textSize="16sp"
+            android:id="@+id/pubtime"
+            android:layout_alignBaseline="@id/pub"/>
 
     </RelativeLayout>
 

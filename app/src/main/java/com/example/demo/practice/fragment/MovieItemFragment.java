@@ -48,6 +48,12 @@ public class MovieItemFragment extends DialogFragment {
     @BindView(R.id.casts)
     TextView casts;
 
+    @BindView(R.id.genres)
+    TextView genres;
+
+    @BindView(R.id.pubtime)
+    TextView pubTime;
+
     public static MovieItemFragment getInstance(String url){
         if (item == null){
             item = new MovieItemFragment();
@@ -82,6 +88,8 @@ public class MovieItemFragment extends DialogFragment {
         sb.replace(sb.lastIndexOf("/"),sb.lastIndexOf("/"),"");
         casts.setText(sb.toString());
         bar.setMax(10);
+        genres.setText(douBanMoveItem.getSubjects().get(0).getGenres().toString());
+        pubTime.setText(douBanMoveItem.getSubjects().get(0).getMainland_pubdate());
 
 
     }

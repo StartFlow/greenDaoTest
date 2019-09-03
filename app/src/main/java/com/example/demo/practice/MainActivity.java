@@ -71,4 +71,14 @@ public class MainActivity extends AppCompatActivity {
     public void in2ObjectBoxActivity(){
         startActivity(new Intent(this,ObjectBoxActivity.class));
     }
+
+    @OnClick(R.id.diffutil)
+    public void in2DiffUtilActivity(){
+        startActivity(new Intent(this,DiffUtilActivity.class));
+    }
+
+    @OnClick(R.id.customview)
+    public void in2CustomActivity(){
+        startActivity(new Intent(this,CustomViewActivity.class));
+    }
 }
