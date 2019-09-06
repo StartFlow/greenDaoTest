@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.demo.practice.DiffUtil.MyDiffUtil;
+import com.example.demo.practice.diffutil.MyDiffUtil;
 import com.example.demo.practice.R;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.example.demo.practice.DiffUtil;
+package com.example.demo.practice.diffutil;
 
 import android.support.v7.util.DiffUtil;
 

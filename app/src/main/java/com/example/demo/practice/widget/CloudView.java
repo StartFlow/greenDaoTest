@@ -1,4 +1,4 @@
-package com.example.demo.practice.Widget;
+package com.example.demo.practice.widget;
 
 import android.content.Context;
 import android.graphics.BlurMaskFilter;

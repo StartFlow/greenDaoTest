@@ -47,4 +47,29 @@ public class DatabindingActivity  extends AppCompatActivity {
         obServeName(viewModel.getName());
     }
 
+//    public List<Activity> getAllActivitys(){
+//        List<Activity> list=new ArrayList<>();
+//        try {
+//            Class<?> activityThread=Class.forName("android.app.ActivityThread");
+//            Method currentActivityThread=activityThread.getDeclaredMethod("currentActivityThread");
+//            currentActivityThread.setAccessible(true);
+//            //获取主线程对象
+//            Object activityThreadObject=currentActivityThread.invoke(null);
+//            Field mActivitiesField = activityThread.getDeclaredField("mActivities");
+//            mActivitiesField.setAccessible(true);
+//            Map<Object,Object> mActivities = (Map<Object,Object>) mActivitiesField.get(activityThreadObject);
+//            for (Map.Entry<Object,Object> entry:mActivities.entrySet()){
+//                Object value = entry.getValue();
+//                Class<?> activityClientRecordClass = value.getClass();
+//                Field activityField = activityClientRecordClass.getDeclaredField("activity");
+//                activityField.setAccessible(true);
+//                Object o = activityField.get(value);
+//                list.add((Activity) o);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return list;
+//    }
+
 }

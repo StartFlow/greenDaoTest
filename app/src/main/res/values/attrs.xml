@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoadingBall">
+        <attr name="text" format="string"></attr>
+        <attr name="color" format="color"></attr>
+    </declare-styleable>
+    <declare-styleable name="WaveBall">
+        <attr name="Wave_color" format="color"></attr>
+        <attr name="Wave_text" format="string"></attr>
+    </declare-styleable>
+</resources>

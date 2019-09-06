@@ -1,23 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
-   <com.example.demo.practice.Widget.SnowyView
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_weight="1"/>
-   <com.example.demo.practice.Widget.CloudView
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_weight="1"/>
-   <com.example.demo.practice.Widget.SunnyView
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
+   <LinearLayout
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:layout_weight="1">
+      <com.example.demo.practice.widget.SnowyView
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"/>
+      <com.example.demo.practice.widget.CloudView
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"/>
+      <com.example.demo.practice.widget.SunnyView
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:id="@+id/sunny"/>
+
+   </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
        android:layout_weight="1"
-       android:id="@+id/sunny"/>
+       android:orientation="vertical"
+       android:background="@color/Dark"
+       >
+      <com.example.demo.practice.widget.WaveBall
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:Wave_color="@color/orange"
+          app:Wave_text="滚"/>
+       <!--<com.example.demo.practice.widget.LoadingBall-->
+           <!--android:layout_width="match_parent"-->
+           <!--android:layout_height="0dp"-->
+           <!--android:layout_weight="1"-->
+           <!--app:text="贴"-->
+          <!--/>-->
+      <!--<com.example.demo.practice.widget.WaveBall-->
+          <!--android:layout_width="match_parent"-->
+          <!--android:layout_height="0dp"-->
+          <!--android:layout_weight="1"-->
+          <!--app:Wave_text="我"-->
+          <!--app:Wave_color="@color/yellow"-->
+         <!--/>-->
+      <!--<com.example.demo.practice.widget.WaveBall-->
+          <!--android:layout_width="match_parent"-->
+          <!--android:layout_height="0dp"-->
+          <!--android:layout_weight="1"-->
+          <!--app:Wave_text="的"-->
+          <!--app:Wave_color="@color/orange"-->
+         <!--/>-->
+      <!--<com.example.demo.practice.widget.WaveBall-->
+          <!--android:layout_width="match_parent"-->
+          <!--android:layout_height="0dp"-->
+          <!--android:layout_weight="1"-->
+          <!--app:Wave_text="英"-->
+          <!--app:Wave_color="@color/red"-->
+          <!--/>-->
+      <!--<com.example.demo.practice.widget.WaveBall-->
+          <!--android:layout_width="match_parent"-->
+          <!--android:layout_height="0dp"-->
+          <!--android:layout_weight="1"-->
+          <!--app:Wave_text="雄"-->
+          <!--app:Wave_color="@color/pink"-->
+          <!--/>-->
+      <!--<com.example.demo.practice.widget.WaveBall-->
+          <!--android:layout_width="match_parent"-->
+          <!--android:layout_height="0dp"-->
+          <!--android:layout_weight="1"-->
+          <!--app:Wave_text="学"-->
+          <!--app:Wave_color="@color/colorAccent"-->
+
+      <!--<com.example.demo.practice.widget.WaveBall-->
+          <!--android:layout_width="match_parent"-->
+          <!--android:layout_height="0dp"-->
+          <!--android:layout_weight="1"-->
+          <!--app:Wave_text="院"-->
+          <!--app:Wave_color="@color/blue"-->
+        <!--/>-->
+
+   </LinearLayout>
+
+
 
 
 </LinearLayout>

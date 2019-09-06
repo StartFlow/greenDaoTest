@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.example.demo.practice.Widget.SunnyView;
+import com.example.demo.practice.widget.SunnyView;
 
 public class CustomViewActivity extends AppCompatActivity {
     @Override
@@ -20,5 +20,6 @@ public class CustomViewActivity extends AppCompatActivity {
                 sunnyView.start();
             }
         });
+
     }
 }

@@ -1,4 +1,4 @@
-package com.example.demo.practice.Widget;
+package com.example.demo.practice.widget;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -16,7 +16,14 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
+import android.view.animation.LinearInterpolator;
 
+
+/**
+ *
+ * 这是写的最乱的一个  看着别人的动画运行过程写的 可以优化整理一下 不然逻辑很混乱 函数变量命名也很随意
+ *  执行过程按照动画的执行写了多个动画  多个动画的衔接来完成
+ * */
 public class SunnyView extends View {
 
 
@@ -98,7 +105,7 @@ public class SunnyView extends View {
         sunnyPaint = new Paint();
         sunnyPaint.setAntiAlias(true);
         sunnyPaint.setColor(Color.parseColor("#ffee58"));
-        sunFilter =  new BlurMaskFilter(sunnayRadiu,BlurMaskFilter.Blur.SOLID);
+        sunFilter =  new BlurMaskFilter(sunnayRadiu/4,BlurMaskFilter.Blur.SOLID);
         sunnyPaint.setMaskFilter(sunFilter);
 
         BigCircleZoomAnima = ValueAnimator.ofInt(sunnayRadiu);
@@ -189,6 +196,20 @@ public class SunnyView extends View {
                 rotateAngle = (float)animation.getAnimatedValue();
             }
         });
+
+
+        ValueAnimator roAnima = ValueAnimator.ofFloat(0,360);
+        roAnima.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                rotateAngle = (float)animation.getAnimatedValue();
+                invalidate();
+            }
+        });
+        roAnima.setDuration(10000);
+        roAnima.setRepeatCount(ValueAnimator.INFINITE);
+        roAnima.setInterpolator(new LinearInterpolator());
+
         set.playTogether(arcAnima1,arcAnima2,arc);
         set.addListener(new Animator.AnimatorListener() {
             @Override
@@ -200,10 +221,10 @@ public class SunnyView extends View {
             public void onAnimationEnd(Animator animation) {
                 State = SHOWING_;
                 rotateAngle = 0;
-                //postInvalidateDelayed(100);
                 ValueAnimator valueAnimator = getSunScaleAnima().setDuration(500);
                 valueAnimator.setInterpolator(new BounceInterpolator());
                 valueAnimator.start();
+                roAnima.start();
             }
 
             @Override
@@ -217,6 +238,8 @@ public class SunnyView extends View {
             }
         });
         set.setDuration(1000);
+
+
     }
 
     private ValueAnimator getSunScaleAnima(){
@@ -308,12 +331,13 @@ public class SunnyView extends View {
         canvas.drawRect(sunRectF,sunnyPaint);
         sunnyPaint.setShader(sunShader);
         canvas.drawCircle(0,0,sunnayRadiu,sunnyPaint);
-        postInvalidateDelayed(100);
+        //最好使用动画来驱使重绘
+//        postInvalidateDelayed(100);
         canvas.restore();
     }
 
     class Cloud {
-        //左边最顶点为坐标基点
+        //左下角为坐标基点
         private float locationX;
         private float locationY;
         private int range; //左右摆动的范围
