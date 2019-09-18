@@ -8,4 +8,7 @@
         <attr name="Wave_color" format="color"></attr>
         <attr name="Wave_text" format="string"></attr>
     </declare-styleable>
+    <declare-styleable name="LoadingSquare">
+        <attr name="square_color" format="color"></attr>
+    </declare-styleable>
 </resources>

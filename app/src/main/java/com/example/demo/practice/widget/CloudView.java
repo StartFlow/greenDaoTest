@@ -128,7 +128,7 @@ public class CloudView extends View {
             canvas.drawCircle(locationX+(cloudWidth/3*2),locationY-(cloudBottomHeight/5*4),rightCircleRadius,cloudPaint);
         }
 
-        public void drawCloud(Canvas canvas){
+        private void drawCloud(Canvas canvas){
             drawBottom(canvas);
             drawLeftCircle(canvas);
             drawRightCircle(canvas);

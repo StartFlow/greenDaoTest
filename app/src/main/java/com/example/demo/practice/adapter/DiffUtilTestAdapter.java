@@ -1,15 +1,17 @@
 package com.example.demo.practice.adapter;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.util.DiffUtil;
+import android.support.v7.util.ListUpdateCallback;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.example.demo.practice.diffutil.MyDiffUtil;
 import com.example.demo.practice.R;
+import com.example.demo.practice.diffutil.MyDiffUtil;
+import com.example.demo.practice.widget.WaveBall;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +52,7 @@ public class DiffUtilTestAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView item;
+        private WaveBall item;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             item = itemView.findViewById(R.id.item_word);
@@ -61,6 +63,28 @@ public class DiffUtilTestAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public void setList(List<String> list) {
         //数据量较大时最好启用子线程计算
         DiffUtil.DiffResult result = DiffUtil.calculateDiff(new MyDiffUtil(list,this.list));
+
+        result.dispatchUpdatesTo(new ListUpdateCallback() {
+            @Override
+            public void onInserted(int i, int i1) {
+
+            }
+
+            @Override
+            public void onRemoved(int i, int i1) {
+
+            }
+
+            @Override
+            public void onMoved(int i, int i1) {
+
+            }
+
+            @Override
+            public void onChanged(int i, int i1, @Nullable Object o) {
+
+            }
+        });
         this.list = list;
         result.dispatchUpdatesTo(this);
     }

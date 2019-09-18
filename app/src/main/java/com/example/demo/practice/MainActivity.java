@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
     }
 
     @OnClick(R.id.greendao)
@@ -79,6 +80,14 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.customview)
     public void in2CustomActivity(){
+
         startActivity(new Intent(this,CustomViewActivity.class));
     }
+
+    @OnClick(R.id.custom_layout_manage)
+    public void in2CustonLayoutManageActivity(){
+        startActivity(new Intent(this, CustomViewGroupActivity.class));
+    }
+
+
 }

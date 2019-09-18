@@ -53,7 +53,16 @@ public class WaveBall extends View {
     }
 
 
-    private void init(Context context,AttributeSet attr){
+    public void setText(String text) {
+        this.text = text;
+        invalidate();
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    private void init(Context context, AttributeSet attr){
         TypedArray array = context.obtainStyledAttributes(attr,R.styleable.WaveBall);
         color = array.getColor(R.styleable.WaveBall_Wave_color,Color.parseColor("#00bcd4"));
         text = array.getString(R.styleable.WaveBall_Wave_text);
@@ -169,7 +178,7 @@ public class WaveBall extends View {
         float x = -radius*3;
         x += percent * 2*radius;
         path.moveTo(x, 0);
-        //赛贝尔曲线使用相对控制点
+        //二阶赛贝尔曲线使用相对控制点  二阶赛贝尔曲线  path当前点 控制点  结束点
         path.rQuadTo(radius / 2, radius/2 , radius , 0);
         path.rQuadTo(radius / 2, -radius/2 , radius , 0);
 

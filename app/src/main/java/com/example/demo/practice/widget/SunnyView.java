@@ -322,10 +322,6 @@ public class SunnyView extends View {
         sunnyPaint.setShader(null);
         canvas.rotate(rotateAngle);
         canvas.scale(scale,scale);
-        rotateAngle++;
-        if (rotateAngle==360){
-            rotateAngle=0;
-        }
         canvas.drawRect(sunRectF,sunnyPaint);
         canvas.rotate(45);
         canvas.drawRect(sunRectF,sunnyPaint);

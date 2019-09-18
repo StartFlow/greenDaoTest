@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:id="@+id/item_word"
-    android:layout_gravity="center"
-    android:textColor="@color/orange"
-    android:textSize="24sp"
-    android:drawableLeft="@drawable/ic_word">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.example.demo.practice.widget.WaveBall
+        android:id="@+id/item_word"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Dark"
+        app:Wave_color="@color/orange"
+        />
 
 
 
-
-</TextView>
+</FrameLayout>
