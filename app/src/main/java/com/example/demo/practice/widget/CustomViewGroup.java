@@ -379,6 +379,7 @@ public class CustomViewGroup extends ViewGroup {
         }
     }
 
+
     private void setSelection(int index) {
         if ((animator != null && animator.isRunning()) || (getChildCount() == 0) || indexOfChild(getChildAt(getChildCount() - 1)) == index)
             return;

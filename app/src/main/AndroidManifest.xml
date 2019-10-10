@@ -31,6 +31,8 @@
         <activity android:name=".DiffUtilActivity"/>
         <activity android:name=".CustomViewActivity"/>
         <activity android:name=".CustomViewGroupActivity"/>
+        <activity android:name=".RecyclerViewTestActivity"></activity>
+        <activity android:name=".TouchEventActivity"/>
     </application>
 
 </manifest>

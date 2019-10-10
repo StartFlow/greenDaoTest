@@ -19,7 +19,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class PicViewRepository {
     private static final String BASE_URL = "http://guolin.tech/";
-    private static ExecutorService netExecu = Executors.newSingleThreadExecutor();
+    private static ExecutorService netExecutor = Executors.newSingleThreadExecutor();
     private OkHttpClient.Builder client = new OkHttpClient.Builder();
     private Retrofit.Builder retrofitBuilder = new Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -33,7 +33,7 @@ public class PicViewRepository {
 
     public LiveData<String> getPicUrl() {
         MutableLiveData<String> liveData = new MutableLiveData<>();
-        netExecu.execute(new Runnable() {
+        netExecutor.execute(new Runnable() {
             @Override
             public void run() {
                 picApi.getBingPic().enqueue(new Callback<String>() {

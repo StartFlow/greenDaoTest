@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.demo.practice.widget.BlurImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/zoro"
+        android:id="@+id/bg_image"/>
+
+    <!--<com.example.demo.practice.widget.SlidingShowImage-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/sliding_image"-->
+        <!--app:top_src="@drawable/image_1"-->
+        <!--app:bottom_src="@drawable/image_2"-->
+        <!--/>-->
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:id="@+id/rv_test">
+
+    </android.support.v7.widget.RecyclerView>
+
+</FrameLayout>

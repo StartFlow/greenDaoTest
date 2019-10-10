@@ -20,6 +20,10 @@ public class TitTok extends View {
     private Xfermode xfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
     private int width;
     private int height;
+    private int offset = 20;
+    private int radiu ;
+    private int noteWidth;
+
 
     public TitTok(Context context) {
         this(context,null);
@@ -57,7 +61,7 @@ public class TitTok extends View {
         canvas.drawPath(mPath,paint);
         int layer = canvas.saveLayer(null,null,Canvas.ALL_SAVE_FLAG);
 
-        mPath = getTitTokPath(-20,-20);
+        mPath = getTitTokPath(-offset,-offset);
         paint.setColor(Color.parseColor("#55FEFB"));
         canvas.drawPath(mPath,paint);
 
@@ -70,15 +74,14 @@ public class TitTok extends View {
 
     }
 
-
     private Path getTitTokPath(int offsetX, int offsetY){
         Path path = new Path();
-        path.moveTo(0,-128);
-        RectF rect = new RectF(-128,-128,128,128);
+        path.moveTo(0,-radiu);
+        RectF rect = new RectF(-radiu,-radiu,radiu,radiu);
         rect.offset(offsetX,offsetY);
         path.addArc(rect,-90,-270);
-        path.rLineTo(0,-384);
-        path.rQuadTo(0,128,128,128);
+        path.rLineTo(0,-radiu*3);
+        path.rQuadTo(0,radiu,radiu,radiu);
         return path;
     }
 

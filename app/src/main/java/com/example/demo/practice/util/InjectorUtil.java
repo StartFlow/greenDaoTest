@@ -3,7 +3,7 @@ package com.example.demo.practice.util;
 import com.example.demo.practice.model.DataBindingViewModelFatory;
 import com.example.demo.practice.model.PagingItemViewModelFatory;
 import com.example.demo.practice.model.PicViewModelFatory;
-import com.example.demo.practice.model.RxJavaViewModelFatory;
+import com.example.demo.practice.model.RxJavaViewModelFactory;
 
 public class InjectorUtil {
 
@@ -11,14 +11,14 @@ public class InjectorUtil {
     private static PagingItemViewModelFatory pagingItemFatory;
     private static DataBindingViewModelFatory dataBindingViewModelFatory;
 
-    public static RxJavaViewModelFatory getRxJavaViewModelFatory() {
+    public static RxJavaViewModelFactory getRxJavaViewModelFatory() {
         if (rxJavaViewModelFatory==null){
-            rxJavaViewModelFatory = new RxJavaViewModelFatory();
+            rxJavaViewModelFatory = new RxJavaViewModelFactory();
         }
         return rxJavaViewModelFatory;
     }
 
-    private static RxJavaViewModelFatory rxJavaViewModelFatory;
+    private static RxJavaViewModelFactory rxJavaViewModelFatory;
 
     public static PicViewModelFatory getPicViewModelFatory(){
         if (picViewFatory==null){

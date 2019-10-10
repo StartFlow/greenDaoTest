@@ -64,8 +64,7 @@ public class JetpackActivity extends AppCompatActivity {
                     }
                 }
                 loadBgImageView(s);
-
-
+                picViewModel.picUrl = s;
             }
         });
     }

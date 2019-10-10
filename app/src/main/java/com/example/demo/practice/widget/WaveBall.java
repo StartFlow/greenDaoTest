@@ -178,7 +178,7 @@ public class WaveBall extends View {
         float x = -radius*3;
         x += percent * 2*radius;
         path.moveTo(x, 0);
-        //二阶赛贝尔曲线使用相对控制点  二阶赛贝尔曲线  path当前点 控制点  结束点
+        //二阶赛贝尔曲线使用相对控制点  二阶赛贝尔曲线  path当前点 控制点  结束点  //使用相对位置来描述控制点和结束点
         path.rQuadTo(radius / 2, radius/2 , radius , 0);
         path.rQuadTo(radius / 2, -radius/2 , radius , 0);
 

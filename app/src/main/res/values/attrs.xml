@@ -11,4 +11,18 @@
     <declare-styleable name="LoadingSquare">
         <attr name="square_color" format="color"></attr>
     </declare-styleable>
+
+    <declare-styleable name="JumpingButton">
+        <attr name="src" format="reference"></attr>
+        <attr name="bottom_text" format="string"></attr>
+        <attr name="main_color" format="color"></attr>
+    </declare-styleable>
+    <declare-styleable name="PhoneRingView">
+        <attr name="phone_color" format="color"></attr>
+        <attr name="src_phone" format="reference"></attr>
+    </declare-styleable>
+    <declare-styleable name="SlidingShowImage">
+        <attr name="top_src" format="reference"></attr>
+        <attr name="bottom_src" format="reference"></attr>
+    </declare-styleable>
 </resources>

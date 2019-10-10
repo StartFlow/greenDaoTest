@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 /**
  * 这个有Bug  待学习改进
  * */
-public class MyPathLayoutMange extends RecyclerView.LayoutManager {
+public class CardLayoutMange extends RecyclerView.LayoutManager {
 
     private final int MAX_COUNT = 4;
     private final float levelScale = 0.05f;

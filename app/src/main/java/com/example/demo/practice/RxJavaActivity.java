@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.demo.practice.model.RxJavaViewModel;
@@ -36,6 +37,12 @@ public class RxJavaActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         viewModel = ViewModelProviders.of(this, InjectorUtil.getRxJavaViewModelFatory()).get(RxJavaViewModel.class);
         observe(viewModel.getLiveData());
+        viewModel.getMapLiveData().observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(@Nullable Integer integer) {
+                Toast.makeText(RxJavaActivity.this, ""+integer, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void observe(LiveData<String> liveData){

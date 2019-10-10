@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
     }
 
     @OnClick(R.id.greendao)
@@ -87,6 +86,16 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.custom_layout_manage)
     public void in2CustonLayoutManageActivity(){
         startActivity(new Intent(this, CustomViewGroupActivity.class));
+    }
+
+    @OnClick(R.id.re_test)
+    public void in2CamerXActivity(){
+        startActivity(new Intent(this, RecyclerViewTestActivity.class));
+    }
+
+    @OnClick(R.id.touch_test)
+    public void in2TouchEventActiviti(){
+        startActivity(new Intent(this, TouchEventActivity.class));
     }
 
 

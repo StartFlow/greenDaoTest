@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 
 import com.example.demo.practice.model.repository.RxJavaRepository;
 
-public class RxJavaViewModelFatory  implements ViewModelProvider.Factory {
+public class RxJavaViewModelFactory implements ViewModelProvider.Factory {
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {

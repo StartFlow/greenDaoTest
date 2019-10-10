@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.demo.practice.widget.TouchTestConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout">
+
+    <com.example.demo.practice.widget.TouchTestView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/child_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/orange"
+        >
+
+    </com.example.demo.practice.widget.TouchTestView>
+
+</com.example.demo.practice.widget.TouchTestConstraintLayout>

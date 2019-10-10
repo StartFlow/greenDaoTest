@@ -31,7 +31,7 @@ public class GalleryItemDecoration extends RecyclerView.ItemDecoration {
         view.setLayoutParams(lp);
         view.setScaleY(0.8f);
         view.setScaleX(0.8f);
-
+        view.setAlpha(0.8f);
     }
 
     public int dpToPx(int dp) {

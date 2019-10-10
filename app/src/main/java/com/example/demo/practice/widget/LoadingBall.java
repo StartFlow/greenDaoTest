@@ -70,15 +70,13 @@ public class LoadingBall extends View {
         text = array.getString(R.styleable.LoadingBall_text);
         array.recycle();
 
-        mainPaint = new Paint();
+        mainPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mainPaint.setColor(color);
         mainPaint.setStyle(Paint.Style.FILL);
-        mainPaint.setAntiAlias(true);
         mainPaint.setDither(true);
 
-        textPaint = new Paint();
+        textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         textPaint.setDither(true);
-        textPaint.setAntiAlias(true);
         textPaint.setTypeface(Typeface.DEFAULT_BOLD);
         mPath = new Path();
         clipPath = new Path();
@@ -125,7 +123,6 @@ public class LoadingBall extends View {
         float bottom = fontMetrics.bottom;
         float textY = -(top+ bottom)/2;
         canvas.drawText(text,0,textY,paint);
-
     }
 
 

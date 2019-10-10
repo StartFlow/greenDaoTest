@@ -84,10 +84,11 @@ public class CustomViewGroupActivity extends AppCompatActivity {
                 offsetX+=dx;
                 int position = offsetX/GalleryItemDecoration.mCosumerX;
                 float percent =(float) (offsetX-position*GalleryItemDecoration.mCosumerX)/GalleryItemDecoration.mCosumerX;
-                setAnima(recyclerView,percent,position);
+                setAnimator(recyclerView,percent,position);
 
             }
         });
+
 
 
 
@@ -129,9 +130,12 @@ public class CustomViewGroupActivity extends AppCompatActivity {
 //        };
 //        ItemTouchHelper helper = new ItemTouchHelper(itemCallBack);
 //        helper.attachToRecyclerView(recyclerView);
+        findViewById(R.id.start_tv).setOnClickListener(getListener());
+        findViewById(R.id.record_tv).setOnClickListener(getListener());
+        findViewById(R.id.stop_tv).setOnClickListener(getListener());
     }
 
-    private void setAnima(RecyclerView recyclerView,float percent,int position){
+    private void setAnimator(RecyclerView recyclerView, float percent, int position){
         float minscale = 0.8f;
         View leftView =  recyclerView.getLayoutManager().findViewByPosition(position-1);
         View centerView = recyclerView.getLayoutManager().findViewByPosition(position);
@@ -141,16 +145,19 @@ public class CustomViewGroupActivity extends AppCompatActivity {
             if (leftView != null) {
                 leftView.setScaleX(minscale + (1 - minscale) * percent);
                 leftView.setScaleY(minscale + (1 - minscale) * percent);
+                leftView.setAlpha(minscale + (1 - minscale) * percent);
             }
 
             if (centerView != null) {
                 centerView.setScaleX(1 - (1 - minscale) * percent);
                 centerView.setScaleY(1 - (1 - minscale) * percent);
+                centerView.setAlpha(1 - (1 - minscale) * percent);
             }
 
             if (rightView != null) {
                 rightView.setScaleX(minscale + (1 - minscale) * percent);
                 rightView.setScaleY(minscale + (1 - minscale) * percent);
+                rightView.setAlpha(minscale + (1 - minscale) * percent);
             }
 
         Log.e("Scroll","percent = " + percent + "position  = + " +position);
@@ -170,4 +177,7 @@ public class CustomViewGroupActivity extends AppCompatActivity {
             }
         };
     }
+
+
+
 }
